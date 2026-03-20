@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Xabi Moreno — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --surface: #111118;
+    --surface2: #1a1a24;
+    --accent: #6c63ff;
+    --accent2: #00d4aa;
+    --accent3: #ff6b6b;
+    --text: #f0f0f5;
+    --muted: #8888aa;
+    --border: rgba(108,99,255,0.2);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── NOISE OVERLAY ─────────────────────── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.4;
+  }
+
+  /* ── GRID BACKGROUND ───────────────────── */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(108,99,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(108,99,255,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── GLOW ORBS ─────────────────────────── */
+  .orb {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(120px);
+    pointer-events: none;
+    z-index: 0;
+    animation: drift 8s ease-in-out infinite;
+  }
+  .orb-1 { width: 600px; height: 600px; background: rgba(108,99,255,0.12); top: -200px; right: -200px; animation-delay: 0s; }
+  .orb-2 { width: 400px; height: 400px; background: rgba(0,212,170,0.08); bottom: 100px; left: -100px; animation-delay: 3s; }
+  .orb-3 { width: 300px; height: 300px; background: rgba(255,107,107,0.06); top: 40%; left: 40%; animation-delay: 5s; }
+
+  @keyframes drift {
+    0%, 100% { transform: translate(0,0) scale(1); }
+    50% { transform: translate(20px, -30px) scale(1.05); }
+  }
+
+  /* ── LAYOUT ────────────────────────────── */
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 1; }
+
+  /* ── NAV ───────────────────────────────── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(10,10,15,0.8);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.1rem;
+    letter-spacing: 0.05em;
+    color: var(--text);
+  }
+  .nav-logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 2rem; }
+  .nav-links a {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent2); }
+
+  /* ── HERO ──────────────────────────────── */
+  #hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 8rem 0 4rem;
+    position: relative;
+  }
+
+  .hero-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent2);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .hero-tag::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 1px;
+    background: var(--accent2);
+  }
+
+  .hero-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+  }
+  .hero-name .line-2 { color: var(--accent); }
+
+  .hero-role {
+    font-family: 'DM Mono', monospace;
+    font-size: 1rem;
+    color: var(--muted);
+    margin-bottom: 2rem;
+    letter-spacing: 0.05em;
+  }
+  .hero-role .sep { color: var(--accent); margin: 0 0.5rem; }
+
+  .hero-desc {
+    max-width: 560px;
+    color: #aaaacc;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 3rem;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 2rem;
+    background: var(--accent);
+    color: white;
+    font-family: 'Syne', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.2s;
+    border: none;
+    cursor: pointer;
+  }
+  .btn-primary:hover { background: #5a52e8; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(108,99,255,0.4); }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 2rem;
+    background: transparent;
+    color: var(--text);
+    font-family: 'Syne', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    transition: all 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--accent2); color: var(--accent2); transform: translateY(-2px); }
+
+  /* hero stats */
+  .hero-stats {
+    display: flex;
+    gap: 3rem;
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--border);
+  }
+  .stat-n {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 2.2rem;
+    color: var(--text);
+    line-height: 1;
+  }
+  .stat-n span { color: var(--accent); }
+  .stat-l {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 0.3rem;
+  }
+
+  /* ── SECTIONS ──────────────────────────── */
+  section { padding: 6rem 0; position: relative; z-index: 1; }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.8rem;
+  }
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+  .section-sub {
+    color: var(--muted);
+    font-size: 1rem;
+    max-width: 500px;
+    margin-bottom: 4rem;
+  }
+
+  /* ── CARDS GRID ────────────────────────── */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(108,99,255,0.05), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .card:hover { border-color: rgba(108,99,255,0.4); transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
+  .card:hover::before { opacity: 1; }
+
+  .card-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+  }
+  .card-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+  }
+  .card-desc {
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+  }
+  .card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    padding: 0.25rem 0.65rem;
+    border-radius: 3px;
+    letter-spacing: 0.05em;
+  }
+  .tag-purple { background: rgba(108,99,255,0.15); color: #a8a3ff; border: 1px solid rgba(108,99,255,0.2); }
+  .tag-teal   { background: rgba(0,212,170,0.1);   color: #00d4aa; border: 1px solid rgba(0,212,170,0.2); }
+  .tag-red    { background: rgba(255,107,107,0.1);  color: #ff8888; border: 1px solid rgba(255,107,107,0.2); }
+  .tag-grey   { background: rgba(255,255,255,0.05); color: var(--muted); border: 1px solid rgba(255,255,255,0.08); }
+
+  /* ── TIMELINE ──────────────────────────── */
+  .timeline { position: relative; padding-left: 2rem; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--accent), transparent);
+  }
+  .tl-item {
+    position: relative;
+    padding-bottom: 2.5rem;
+  }
+  .tl-item::before {
+    content: '';
+    position: absolute;
+    left: -2.35rem;
+    top: 6px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 12px rgba(108,99,255,0.6);
+  }
+  .tl-date {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--accent2);
+    letter-spacing: 0.1em;
+    margin-bottom: 0.3rem;
+  }
+  .tl-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+  }
+  .tl-org {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-bottom: 0.6rem;
+  }
+  .tl-desc {
+    font-size: 0.88rem;
+    color: #9999bb;
+    line-height: 1.6;
+  }
+
+  /* ── SKILLS ────────────────────────────── */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+  }
+  .skill-block {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+  }
+  .skill-block-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+  .skill-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+  }
+  .skill-name { font-size: 0.88rem; color: var(--text); }
+  .skill-bar-wrap { width: 120px; height: 4px; background: var(--surface2); border-radius: 2px; overflow: hidden; }
+  .skill-bar { height: 100%; border-radius: 2px; background: linear-gradient(90deg, var(--accent), var(--accent2)); }
+
+  /* ── MODERATION EXAMPLE ─────────────────── */
+  .mod-example {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .mod-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem 1.5rem;
+    background: var(--surface2);
+    border-bottom: 1px solid var(--border);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+  .dot-r { width: 10px; height: 10px; border-radius: 50%; background: #ff6b6b; }
+  .dot-y { width: 10px; height: 10px; border-radius: 50%; background: #ffd93d; }
+  .dot-g { width: 10px; height: 10px; border-radius: 50%; background: #00d4aa; }
+  .mod-body { padding: 1.5rem; }
+  .mod-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+    align-items: start;
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 0.8rem;
+    background: var(--surface2);
+    border: 1px solid transparent;
+    transition: all 0.2s;
+  }
+  .mod-row.approved { border-color: rgba(0,212,170,0.2); }
+  .mod-row.flagged  { border-color: rgba(255,107,107,0.2); }
+  .mod-row.review   { border-color: rgba(255,217,61,0.2); }
+  .mod-ticket { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--muted); margin-bottom: 0.3rem; }
+  .mod-text   { font-size: 0.85rem; color: #ccccdd; line-height: 1.5; }
+  .mod-badge  { font-family: 'DM Mono', monospace; font-size: 0.65rem; padding: 0.3rem 0.7rem; border-radius: 3px; white-space: nowrap; font-weight: 500; }
+  .badge-ok   { background: rgba(0,212,170,0.15); color: #00d4aa; border: 1px solid rgba(0,212,170,0.3); }
+  .badge-flag { background: rgba(255,107,107,0.15); color: #ff8888; border: 1px solid rgba(255,107,107,0.3); }
+  .badge-rev  { background: rgba(255,217,61,0.15);  color: #ffd93d; border: 1px solid rgba(255,217,61,0.3); }
+  .mod-reason { font-size: 0.75rem; color: var(--muted); margin-top: 0.3rem; font-style: italic; }
+
+  /* ── CONTACT ───────────────────────────── */
+  #contact {
+    text-align: center;
+    padding: 6rem 0 8rem;
+  }
+  .contact-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 4rem 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+  }
+  .contact-box::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  }
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.5rem;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--text);
+    text-decoration: none;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+    transition: all 0.2s;
+  }
+  .contact-link:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+
+  /* ── FOOTER ────────────────────────────── */
+  footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid var(--border);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--muted);
+    position: relative;
+    z-index: 1;
+    letter-spacing: 0.05em;
+  }
+
+  /* ── ANIMATIONS ────────────────────────── */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 640px) {
+    .nav-links { display: none; }
+    .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
+    .cards-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">XM<span>.</span></div>
+  <div class="nav-links">
+    <a href="#projects">Proyectos</a>
+    <a href="#training">Formación</a>
+    
+    <a href="#contact">Contacto</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-tag">Moderación de Contenido · Soporte al Cliente · Ad Tech</div>
+    <h1 class="hero-name">
+      <span class="line-1">XABI</span><br>
+      <span class="line-2">MORENO</span>
+    </h1>
+    <p class="hero-role">
+      Ops Digital
+      <span class="sep">/</span>
+      E-commerce
+      <span class="sep">/</span>
+      Herramientas IA
+      <span class="sep">/</span>
+      Barcelona
+    </p>
+    <p class="hero-desc">
+      Profesional digital con +3 años en operaciones e-commerce, gestión de contenido y soporte multicanal. Formación activa en IA (Anthropic Academy) y desarrollo web (freeCodeCamp). Listo para proteger y moderar la red de ExoClick desde el primer día.
+    </p>
+    <div class="hero-cta">
+      <a href="#projects" class="btn-primary">Ver Proyectos ↓</a>
+      <a href="mailto:xabi.xmc@hotmail.com" class="btn-outline">Contactar</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-n">3<span>+</span></div>
+        <div class="stat-l">Años en ops digital</div>
+      </div>
+      <div>
+        <div class="stat-n">4<span>+</span></div>
+        <div class="stat-l">Plataformas gestionadas</div>
+      </div>
+      <div>
+        <div class="stat-n">2<span>x</span></div>
+        <div class="stat-l">Certificaciones IA (en curso)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <div class="section-label fade-in">// 01 — Proyectos E-commerce</div>
+    <h2 class="section-title fade-in">Platforms & Operations</h2>
+    <p class="section-sub fade-in">Experiencia directa gestionando tiendas digitales, calidad de contenido y operaciones de cliente en múltiples plataformas.</p>
+
+    <div class="cards-grid">
+      <div class="card fade-in">
+        <div class="card-icon">🛍️</div>
+        <div class="card-title">5TH Essence Square — Magento</div>
+        <div class="card-desc">Gestión del catálogo de productos garantizando exactitud, consistencia y calidad en todos los registros. Resolución de incidencias con seguimiento detallado. Identificación de patrones irregulares en pedidos y mejoras de proceso.</div>
+        <div class="card-tags">
+          <span class="tag tag-purple">Magento</span>
+          <span class="tag tag-teal">Content Review</span>
+          <span class="tag tag-grey">Incident Management</span>
+          <span class="tag tag-grey">QA</span>
+        </div>
+      </div>
+
+      <div class="card fade-in">
+        <div class="card-icon">⚡</div>
+        <div class="card-title">NŪDA Market — Shopify</div>
+        <div class="card-desc">Gestión completa de tienda Shopify: publicación de contenido, control de calidad y soporte multicanal via email y chat. Integración de herramientas de automatización para optimizar flujos repetitivos.</div>
+        <div class="card-tags">
+          <span class="tag tag-purple">Shopify</span>
+          <span class="tag tag-teal">Email Support</span>
+          <span class="tag tag-grey">Workflow Automation</span>
+          <span class="tag tag-grey">Brand Standards</span>
+        </div>
+      </div>
+
+      <div class="card fade-in">
+        <div class="card-icon">📊</div>
+        <div class="card-title">Operaciones de Campaña Multicanal</div>
+        <div class="card-desc">Coordinación de campañas digitales en 4 cuentas de RRSS de forma simultánea. Monitorización de contenido en busca de irregularidades, cumplimiento de marca y estándares de calidad en todas las publicaciones.</div>
+        <div class="card-tags">
+          <span class="tag tag-purple">RRSS Management</span>
+          <span class="tag tag-teal">Content Moderation</span>
+          <span class="tag tag-grey">KPI Tracking</span>
+          <span class="tag tag-grey">SEO/SEM</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRAINING -->
+<section id="training">
+  <div class="container">
+    <div class="section-label fade-in">// 02 — AI & Web Training</div>
+    <h2 class="section-title fade-in">Aprendizaje Activo</h2>
+    <p class="section-sub fade-in">Certificaciones activas en herramientas de IA y desarrollo web — directamente aplicables a moderación de contenido y entornos ad tech.</p>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
+      <div class="fade-in">
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-date">FEB 2026 — EN CURSO</div>
+            <div class="tl-title">Anthropic Academy</div>
+            <div class="tl-org">AI Fluency & Prompt Engineering</div>
+            <div class="tl-desc">
+              Programas: Claude 101 · Prompt Engineering Interactive Tutorial · AI Automation with Claude · Claude Code.<br><br>
+              Habilidades aplicadas: flujos de análisis de contenido, identificación de patrones, documentación estructurada con herramientas de IA.
+            </div>
+            <div class="card-tags" style="margin-top: 0.8rem;">
+              <span class="tag tag-purple">Claude API</span>
+              <span class="tag tag-teal">Prompt Engineering</span>
+              <span class="tag tag-grey">AI Automation</span>
+            </div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-date">ENE 2026 — EN CURSO</div>
+            <div class="tl-title">freeCodeCamp</div>
+            <div class="tl-org">Responsive Web Design · JavaScript</div>
+            <div class="tl-desc">
+              HTML5 & CSS3 certification in progress. Next modules: JavaScript, React, APIs & Back-End.<br><br>
+              Relevant to ExoClick: understanding of web construction, browser behaviour and frontend structure — directly applicable to content review and ad tech investigation tasks.
+            </div>
+            <div class="card-tags" style="margin-top: 0.8rem;">
+              <span class="tag tag-purple">HTML5</span>
+              <span class="tag tag-teal">CSS3</span>
+              <span class="tag tag-grey">JavaScript (next)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fade-in">
+        <div class="skill-block" style="margin-bottom: 1rem;">
+          <div class="skill-block-title">Habilidades Técnicas</div>
+          <div class="skill-item"><span class="skill-name">Content Review & QA</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:90%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">Soporte Ticket / Email</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:88%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">Shopify / Magento</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:82%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">HTML / CSS</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:55%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">Herramientas IA (Claude, ChatGPT)</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:80%"></div></div></div>
+        </div>
+        <div class="skill-block">
+          <div class="skill-block-title">Habilidades Blandas</div>
+          <div class="skill-item"><span class="skill-name">Atención al Detalle</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:95%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">Investigación Analítica</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:85%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">Multitarea</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:90%"></div></div></div>
+          <div class="skill-item"><span class="skill-name">Resiliencia bajo Presión</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:95%"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-box fade-in">
+      <div class="section-label" style="text-align:center; margin-bottom: 1rem;">// Contacto</div>
+      <h2 class="section-title" style="font-size: 2rem;">Xabi Moreno<br><span style="color: var(--accent);">Barcelona.</span></h2>
+      <p style="color: var(--muted); margin-top: 1rem; font-size: 0.95rem;">Disponibilidad inmediata · Barcelona</p>
+      <div class="contact-links">
+        <a href="mailto:xabi.xmc@hotmail.com" class="contact-link">📧 xabi.xmc@hotmail.com</a>
+        <a href="tel:+34696332836" class="contact-link">📞 +34 696 33 28 36</a>
+        <a href="https://linkedin.com/in/xabi-moreno" target="_blank" class="contact-link">🔗 LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Xabi Moreno · Barcelona · 2026 &nbsp;·&nbsp; Xabi Moreno · Profesional Digital · Barcelona · 2026
+</footer>
+
+<script>
+  // Fade in on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

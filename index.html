@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Xabi Moreno — Portfolio</title>
+<title>Xabi Moreno â Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -31,7 +31,7 @@
     overflow-x: hidden;
   }
 
-  /* ── NOISE OVERLAY ─────────────────────── */
+  /* ââ NOISE OVERLAY âââââââââââââââââââââââ */
   body::before {
     content: '';
     position: fixed;
@@ -42,7 +42,7 @@
     opacity: 0.4;
   }
 
-  /* ── GRID BACKGROUND ───────────────────── */
+  /* ââ GRID BACKGROUND âââââââââââââââââââââ */
   body::after {
     content: '';
     position: fixed;
@@ -55,7 +55,7 @@
     z-index: 0;
   }
 
-  /* ── GLOW ORBS ─────────────────────────── */
+  /* ââ GLOW ORBS âââââââââââââââââââââââââââ */
   .orb {
     position: fixed;
     border-radius: 50%;
@@ -73,10 +73,10 @@
     50% { transform: translate(20px, -30px) scale(1.05); }
   }
 
-  /* ── LAYOUT ────────────────────────────── */
+  /* ââ LAYOUT ââââââââââââââââââââââââââââââ */
   .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 1; }
 
-  /* ── NAV ───────────────────────────────── */
+  /* ââ NAV âââââââââââââââââââââââââââââââââ */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -109,7 +109,7 @@
   }
   .nav-links a:hover { color: var(--accent2); }
 
-  /* ── HERO ──────────────────────────────── */
+  /* ââ HERO ââââââââââââââââââââââââââââââââ */
   #hero {
     min-height: 100vh;
     display: flex;
@@ -232,7 +232,7 @@
     margin-top: 0.3rem;
   }
 
-  /* ── SECTIONS ──────────────────────────── */
+  /* ââ SECTIONS ââââââââââââââââââââââââââââ */
   section { padding: 6rem 0; position: relative; z-index: 1; }
 
   .section-label {
@@ -257,7 +257,7 @@
     margin-bottom: 4rem;
   }
 
-  /* ── CARDS GRID ────────────────────────── */
+  /* ââ CARDS GRID ââââââââââââââââââââââââââ */
   .cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -326,7 +326,7 @@
   .tag-red    { background: rgba(255,107,107,0.1);  color: #ff8888; border: 1px solid rgba(255,107,107,0.2); }
   .tag-grey   { background: rgba(255,255,255,0.05); color: var(--muted); border: 1px solid rgba(255,255,255,0.08); }
 
-  /* ── TIMELINE ──────────────────────────── */
+  /* ââ TIMELINE ââââââââââââââââââââââââââââ */
   .timeline { position: relative; padding-left: 2rem; }
   .timeline::before {
     content: '';
@@ -376,7 +376,7 @@
     line-height: 1.6;
   }
 
-  /* ── SKILLS ────────────────────────────── */
+  /* ââ SKILLS ââââââââââââââââââââââââââââââ */
   .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -406,7 +406,7 @@
   .skill-bar-wrap { width: 120px; height: 4px; background: var(--surface2); border-radius: 2px; overflow: hidden; }
   .skill-bar { height: 100%; border-radius: 2px; background: linear-gradient(90deg, var(--accent), var(--accent2)); }
 
-  /* ── MODERATION EXAMPLE ─────────────────── */
+  /* ââ MODERATION EXAMPLE âââââââââââââââââââ */
   .mod-example {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -451,7 +451,7 @@
   .badge-rev  { background: rgba(255,217,61,0.15);  color: #ffd93d; border: 1px solid rgba(255,217,61,0.3); }
   .mod-reason { font-size: 0.75rem; color: var(--muted); margin-top: 0.3rem; font-style: italic; }
 
-  /* ── CONTACT ───────────────────────────── */
+  /* ââ CONTACT âââââââââââââââââââââââââââââ */
   #contact {
     text-align: center;
     padding: 6rem 0 8rem;
@@ -497,7 +497,7 @@
   }
   .contact-link:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
 
-  /* ── FOOTER ────────────────────────────── */
+  /* ââ FOOTER ââââââââââââââââââââââââââââââ */
   footer {
     text-align: center;
     padding: 2rem;
@@ -510,7 +510,7 @@
     letter-spacing: 0.05em;
   }
 
-  /* ── ANIMATIONS ────────────────────────── */
+  /* ââ ANIMATIONS ââââââââââââââââââââââââââ */
   .fade-in {
     opacity: 0;
     transform: translateY(24px);
@@ -522,6 +522,8 @@
     .nav-links { display: none; }
     .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
     .cards-grid { grid-template-columns: 1fr; }
+    .container { max-width: 100%; padding: 0 1rem; box-sizing: border-box; }
+    .hero-name { font-size: clamp(2.5rem, 10vw, 4rem); }
   }
 </style>
 </head>
@@ -545,7 +547,7 @@
 <!-- HERO -->
 <section id="hero">
   <div class="container">
-    <div class="hero-tag">Content Moderation · Customer Support · Ad Tech</div>
+    <div class="hero-tag">Content Moderation Â· Customer Support Â· Ad Tech</div>
     <h1 class="hero-name">
       <span class="line-1">XABI</span><br>
       <span class="line-2">MORENO</span>
@@ -563,7 +565,7 @@
       Detail-oriented digital professional with 3+ years in e-commerce operations, digital marketing and multichannel support. Currently training in AI (Anthropic Academy) and web development (freeCodeCamp). Fast learner, results-driven and available immediately.
     </p>
     <div class="hero-cta">
-      <a href="#projects" class="btn-primary">View Work ↓</a>
+      <a href="#projects" class="btn-primary">View Work â</a>
       <a href="/cdn-cgi/l/email-protection#d6aeb7b4bff8aebbb596beb9a2bbb7bfbaf8b5b9bb" class="btn-outline">Get in Touch</a>
     </div>
     <div class="hero-stats">
@@ -586,7 +588,7 @@
 <!-- PROJECTS -->
 <section id="projects">
   <div class="container">
-    <div class="section-label fade-in">// 01 — E-commerce Projects</div>
+    <div class="section-label fade-in">// 01 â E-commerce Projects</div>
     <h2 class="section-title fade-in">Platforms & Operations</h2>
     <p class="section-sub fade-in">Hands-on experience managing digital storefronts, content quality and customer operations across multiple platforms.</p>
 
@@ -599,13 +601,13 @@
           <span class="tag tag-purple">IA Aplicada</span>
           <span class="tag tag-teal">JSON</span>
           <span class="tag tag-grey">Automatización</span>
-          <span class="tag tag-grey"><a href="https://morenoxabi.github.io/demo-documento-json/" target="_blank" style="color:inherit;text-decoration:none;">Ver demo →</a></span>
         </div>
+        <a href="https://morenoxabi.github.io/demo-documento-json/" target="_blank" rel="noopener" style="display:inline-block;margin-top:1rem;padding:0.45rem 1rem;background:transparent;border:1px solid var(--accent);color:var(--accent);font-family:'DM Mono',monospace;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;border-radius:4px;transition:background 0.2s,color 0.2s;" onmouseover="this.style.background='var(--accent)';this.style.color='#0a0a0f'" onmouseout="this.style.background='transparent';this.style.color='var(--accent)'">Ver demo en vivo →</a>
       </div>
 
             <div class="card fade-in">
-        <div class="card-icon">🛍️</div>
-        <div class="card-title">5TH Essence Square — Magento</div>
+        <div class="card-icon">ðï¸</div>
+        <div class="card-title">5TH Essence Square â Magento</div>
         <div class="card-desc">Managed product catalogue content ensuring accuracy, consistency and quality across all listings. Handled customer incident resolution with detailed follow-up tracking. Identified irregular patterns in orders and flagged process improvements.</div>
         <div class="card-tags">
           <span class="tag tag-purple">Magento</span>
@@ -616,8 +618,8 @@
       </div>
 
       <div class="card fade-in">
-        <div class="card-icon">⚡</div>
-        <div class="card-title">NŪDA Market — Shopify</div>
+        <div class="card-icon">â¡</div>
+        <div class="card-title">NÅªDA Market â Shopify</div>
         <div class="card-desc">End-to-end Shopify store management including content publication, quality control and multichannel customer support via email and chat. Integrated automation tools to streamline repetitive workflows.</div>
         <div class="card-tags">
           <span class="tag tag-purple">Shopify</span>
@@ -628,7 +630,7 @@
       </div>
 
       <div class="card fade-in">
-        <div class="card-icon">📊</div>
+        <div class="card-icon">ð</div>
         <div class="card-title">Multichannel Campaign Operations</div>
         <div class="card-desc">Coordinated digital campaigns across 4 social media accounts simultaneously. Monitored content for irregularities, ensured brand compliance and maintained quality standards across all published materials.</div>
         <div class="card-tags">
@@ -645,19 +647,19 @@
 <!-- TRAINING -->
 <section id="training">
   <div class="container">
-    <div class="section-label fade-in">// 02 — AI & Web Training</div>
+    <div class="section-label fade-in">// 02 â AI & Web Training</div>
     <h2 class="section-title fade-in">Active Learning</h2>
-    <p class="section-sub fade-in">Ongoing certifications in AI tools and web development — directly applicable to content moderation and ad tech environments.</p>
+    <p class="section-sub fade-in">Ongoing certifications in AI tools and web development â directly applicable to content moderation and ad tech environments.</p>
 
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
       <div class="fade-in">
         <div class="timeline">
           <div class="tl-item">
-            <div class="tl-date">FEB 2026 — ONGOING</div>
+            <div class="tl-date">FEB 2026 â ONGOING</div>
             <div class="tl-title">Anthropic Academy</div>
             <div class="tl-org">AI Fluency & Prompt Engineering</div>
             <div class="tl-desc">
-              Programmes: Claude 101 · Prompt Engineering Interactive Tutorial · AI Automation with Claude · Claude Code.<br><br>
+              Programmes: Claude 101 Â· Prompt Engineering Interactive Tutorial Â· AI Automation with Claude Â· Claude Code.<br><br>
               Applied skills: content analysis workflows, pattern identification, structured documentation using AI tools.
             </div>
             <div class="card-tags" style="margin-top: 0.8rem;">
@@ -668,12 +670,12 @@
           </div>
 
           <div class="tl-item">
-            <div class="tl-date">JAN 2026 — ONGOING</div>
+            <div class="tl-date">JAN 2026 â ONGOING</div>
             <div class="tl-title">freeCodeCamp</div>
-            <div class="tl-org">Responsive Web Design · JavaScript</div>
+            <div class="tl-org">Responsive Web Design Â· JavaScript</div>
             <div class="tl-desc">
               HTML5 & CSS3 certification in progress. Next modules: JavaScript, React, APIs & Back-End.<br><br>
-              Understanding of web construction, browser behaviour and frontend structure — directly applicable to digital operations, content management and sales support tasks.
+              Understanding of web construction, browser behaviour and frontend structure â directly applicable to digital operations, content management and sales support tasks.
             </div>
             <div class="card-tags" style="margin-top: 0.8rem;">
               <span class="tag tag-purple">HTML5</span>
@@ -711,18 +713,18 @@
     <div class="contact-box fade-in">
       <div class="section-label" style="text-align:center; margin-bottom: 1rem;">// Contacto</div>
       <h2 class="section-title" style="font-size: 2rem;">Xabi Moreno<br><span style="color: var(--accent);">Barcelona.</span></h2>
-      <p style="color: var(--muted); margin-top: 1rem; font-size: 0.95rem;">Available immediately · Barcelona</p>
+      <p style="color: var(--muted); margin-top: 1rem; font-size: 0.95rem;">Available immediately Â· Barcelona</p>
       <div class="contact-links">
-        <a href="/cdn-cgi/l/email-protection#453d24272c6b3d2826052d2a3128242c296b262a28" class="contact-link">📧 <span class="__cf_email__" data-cfemail="6b130a0902451306082b03041f060a020745080406">[email&#160;protected]</span></a>
-        <a href="tel:+34696332836" class="contact-link">📞 +34 696 33 28 36</a>
-        <a href="https://linkedin.com/in/xabi-moreno" target="_blank" class="contact-link">🔗 LinkedIn</a>
+        <a href="/cdn-cgi/l/email-protection#453d24272c6b3d2826052d2a3128242c296b262a28" class="contact-link">ð§ <span class="__cf_email__" data-cfemail="6b130a0902451306082b03041f060a020745080406">[email&#160;protected]</span></a>
+        <a href="tel:+34696332836" class="contact-link">ð +34 696 33 28 36</a>
+        <a href="https://linkedin.com/in/xabi-moreno" target="_blank" class="contact-link">ð LinkedIn</a>
       </div>
     </div>
   </div>
 </section>
 
 <footer>
-  Xabi Moreno · Barcelona · 2026 &nbsp;·&nbsp; Xabi Moreno · Digital Professional · Barcelona · 2026
+  Xabi Moreno Â· Barcelona Â· 2026 &nbsp;Â·&nbsp; Xabi Moreno Â· Digital Professional Â· Barcelona Â· 2026
 </footer>
 
 <script>

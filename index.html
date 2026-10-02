@@ -523,6 +523,14 @@
     .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
     .cards-grid { grid-template-columns: 1fr; }
   }
+
+  .lang { font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.1em; color: var(--muted); text-decoration: none; border: 1px solid var(--border); padding: 0.3rem 0.6rem; border-radius: 3px; margin-left: 1.5rem; }
+  .lang:hover { color: var(--accent2); border-color: var(--accent2); }
+  .nav-right { display: flex; align-items: center; }
+  .train-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+  .card-date { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--accent2); letter-spacing: 0.1em; margin-bottom: 0.4rem; }
+  .card-org { font-size: 0.82rem; color: var(--muted); margin-bottom: 0.8rem; }
+  @media (max-width: 760px) { .train-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -531,173 +539,139 @@
 <div class="orb orb-2"></div>
 <div class="orb orb-3"></div>
 
-<!-- NAV -->
 <nav>
   <div class="nav-logo">XM<span>.</span></div>
-  <div class="nav-links">
-    <a href="#projects">Projects</a>
-    <a href="#training">Training</a>
-    
-    <a href="#contact">Contact</a>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="#experience">Experience</a>
+      <a href="#training">Training</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a class="lang" href="es.html">ES</a>
   </div>
 </nav>
 
-<!-- HERO -->
 <section id="hero">
   <div class="container">
-    <div class="hero-tag">Content Moderation · Customer Support · Ad Tech</div>
+    <div class="hero-tag">Digital Marketing · CRM & Email Marketing · Automation & AI</div>
     <h1 class="hero-name">
       <span class="line-1">XAVI</span><br>
       <span class="line-2">MORENO</span>
     </h1>
-    <p class="hero-role">
-      Digital Ops
-      <span class="sep">/</span>
-      E-commerce
-      <span class="sep">/</span>
-      AI Tools
-      <span class="sep">/</span>
-      Barcelona
-    </p>
-    <p class="hero-desc">
-      Detail-oriented digital professional with 3+ years in e-commerce operations, digital marketing and multichannel support. Currently training in AI (Anthropic Academy) and web development (freeCodeCamp). Fast learner, results-driven and available immediately.
-    </p>
+    <p class="hero-role">Digital Marketing<span class="sep">/</span>E-commerce<span class="sep">/</span>Automation<span class="sep">/</span>Barcelona</p>
+    <p class="hero-desc">Digital marketing and e-commerce profile: Shopify and Magento stores, segmented email marketing, social media and WordPress websites. Now specialising in CRM and automation, with hands-on training in Make, n8n and AI agents with Claude.</p>
     <div class="hero-cta">
-      <a href="#projects" class="btn-primary">View Work ↓</a>
-      <a href="mailto:xabi.xmc@hotmail.com" class="btn-outline">Get in Touch</a>
+      <a href="#experience" class="btn-primary">See experience ↓</a>
+      <a href="mailto:xabi.xmc@hotmail.com" class="btn-outline">Get in touch</a>
     </div>
-    <div class="hero-stats">
-      <div>
-        <div class="stat-n">3<span>+</span></div>
-        <div class="stat-l">Years in digital ops</div>
-      </div>
-      <div>
-        <div class="stat-n">4<span>+</span></div>
-        <div class="stat-l">Platforms managed</div>
-      </div>
-      <div>
-        <div class="stat-n">2<span>x</span></div>
-        <div class="stat-l">AI certifications (ongoing)</div>
-      </div>
-    </div>
+    <div class="hero-stats"><div><div class="stat-n">10<span>+</span></div><div class="stat-l">Years managing teams</div></div><div><div class="stat-n">3<span></span></div><div class="stat-l">Marketing & e-commerce companies</div></div><div><div class="stat-n">4<span></span></div><div class="stat-l">Social media accounts managed</div></div></div>
   </div>
 </section>
 
-<!-- PROJECTS -->
-<section id="projects">
+<section id="experience">
   <div class="container">
-    <div class="section-label fade-in">// 01 — E-commerce Projects</div>
-    <h2 class="section-title fade-in">Platforms & Operations</h2>
-    <p class="section-sub fade-in">Hands-on experience managing digital storefronts, content quality and customer operations across multiple platforms.</p>
-
+    <div class="section-label fade-in">// 01 — Digital marketing experience</div>
+    <h2 class="section-title fade-in">Marketing & E-commerce</h2>
+    <p class="section-sub fade-in">What I have done at an agency, a brand and an online store.</p>
     <div class="cards-grid">
       <div class="card fade-in">
-        <div class="card-icon">🛍️</div>
-        <div class="card-title">5TH Essence Square — Magento</div>
-        <div class="card-desc">Managed product catalogue content ensuring accuracy, consistency and quality across all listings. Handled customer incident resolution with detailed follow-up tracking. Identified irregular patterns in orders and flagged process improvements.</div>
-        <div class="card-tags">
-          <span class="tag tag-purple">Magento</span>
-          <span class="tag tag-teal">Content Review</span>
-          <span class="tag tag-grey">Incident Management</span>
-          <span class="tag tag-grey">QA</span>
-        </div>
+        <div class="card-icon">🎯</div>
+        <div class="card-date">2022 · 4 MONTHS</div>
+        <div class="card-title">Pukkas</div>
+        <div class="card-org">Digital marketing agency · Internship</div>
+        <div class="card-desc">Social media management and content preparation for clients. Client landing pages and websites in WordPress. Editing and design of content pieces.</div>
+        <div class="card-tags"><span class="tag tag-purple">WordPress</span><span class="tag tag-teal">Landing pages</span><span class="tag tag-grey">Social media</span><span class="tag tag-grey">Content</span></div>
       </div>
-
+      <div class="card fade-in">
+        <div class="card-icon">🛍️</div>
+        <div class="card-date">APR 2020 — JUL 2021</div>
+        <div class="card-title">5TH Essence Square / IKIO</div>
+        <div class="card-org">Digital marketing & e-commerce · Badalona</div>
+        <div class="card-desc">Newsletters and multichannel campaigns with brands and influencers, tracking KPIs. Managed 4 Meta/Instagram accounts. Magento e-commerce and distributor accounts with ongoing follow-up.</div>
+        <div class="card-tags"><span class="tag tag-purple">Magento</span><span class="tag tag-teal">Email marketing</span><span class="tag tag-grey">Meta / Instagram</span><span class="tag tag-grey">KPIs</span></div>
+      </div>
       <div class="card fade-in">
         <div class="card-icon">⚡</div>
-        <div class="card-title">NŪDA Market — Shopify</div>
-        <div class="card-desc">End-to-end Shopify store management including content publication, quality control and multichannel customer support via email and chat. Integrated automation tools to streamline repetitive workflows.</div>
-        <div class="card-tags">
-          <span class="tag tag-purple">Shopify</span>
-          <span class="tag tag-teal">Email Support</span>
-          <span class="tag tag-grey">Workflow Automation</span>
-          <span class="tag tag-grey">Brand Standards</span>
-        </div>
-      </div>
-
-      <div class="card fade-in">
-        <div class="card-icon">📊</div>
-        <div class="card-title">Multichannel Campaign Operations</div>
-        <div class="card-desc">Coordinated digital campaigns across 4 social media accounts simultaneously. Monitored content for irregularities, ensured brand compliance and maintained quality standards across all published materials.</div>
-        <div class="card-tags">
-          <span class="tag tag-purple">RRSS Management</span>
-          <span class="tag tag-teal">Content Moderation</span>
-          <span class="tag tag-grey">KPI Tracking</span>
-          <span class="tag tag-grey">SEO/SEM</span>
-        </div>
+        <div class="card-date">FEB 2021 — MAY 2021</div>
+        <div class="card-title">NŪDA Market</div>
+        <div class="card-org">Marketing & e-commerce · Barcelona</div>
+        <div class="card-desc">End-to-end Shopify store management: catalogue, orders, customer support and funnel improvements. Segmented email campaigns for acquisition and, above all, retention.</div>
+        <div class="card-tags"><span class="tag tag-purple">Shopify</span><span class="tag tag-teal">Segmentation</span><span class="tag tag-grey">Retention</span><span class="tag tag-grey">Support</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- TRAINING -->
 <section id="training">
   <div class="container">
-    <div class="section-label fade-in">// 02 — AI & Web Training</div>
+    <div class="section-label fade-in">// 02 — Training</div>
     <h2 class="section-title fade-in">Active Learning</h2>
-    <p class="section-sub fade-in">Ongoing certifications in AI tools and web development — directly applicable to content moderation and ad tech environments.</p>
-
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
+    <p class="section-sub fade-in">What I am learning now and the certificates I already hold.</p>
+    <div class="train-grid">
       <div class="fade-in">
         <div class="timeline">
           <div class="tl-item">
-            <div class="tl-date">FEB 2026 — ONGOING</div>
+            <div class="tl-date">2026 — IN PROGRESS</div>
             <div class="tl-title">Anthropic Academy</div>
-            <div class="tl-org">AI Fluency & Prompt Engineering</div>
-            <div class="tl-desc">
-              Programmes: Claude 101 · Prompt Engineering Interactive Tutorial · AI Automation with Claude · Claude Code.<br><br>
-              Applied skills: content analysis workflows, pattern identification, structured documentation using AI tools.
-            </div>
-            <div class="card-tags" style="margin-top: 0.8rem;">
-              <span class="tag tag-purple">Claude API</span>
-              <span class="tag tag-teal">Prompt Engineering</span>
-              <span class="tag tag-grey">AI Automation</span>
-            </div>
+            <div class="tl-org">Claude 101 & AI automation</div>
+            <div class="tl-desc">Hands-on use of Claude, prompting and task automation with AI.</div>
+            <div class="card-tags" style="margin-top: 0.8rem;"><span class="tag tag-purple">Claude</span><span class="tag tag-teal">Prompting</span><span class="tag tag-grey">Applied AI</span></div>
           </div>
-
           <div class="tl-item">
-            <div class="tl-date">JAN 2026 — ONGOING</div>
+            <div class="tl-date">2026 — IN PROGRESS</div>
+            <div class="tl-title">Automation & AI in practice</div>
+            <div class="tl-org">Self-built study plan</div>
+            <div class="tl-desc">Exercises with Make, n8n and Flowise. Practice flows for admin tasks: lead capture, quotes and invoicing. Basic Python.</div>
+            <div class="card-tags" style="margin-top: 0.8rem;"><span class="tag tag-purple">Make</span><span class="tag tag-teal">n8n</span><span class="tag tag-grey">Flowise</span><span class="tag tag-grey">Python</span></div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">2026 — IN PROGRESS</div>
             <div class="tl-title">freeCodeCamp</div>
-            <div class="tl-org">Responsive Web Design · JavaScript</div>
-            <div class="tl-desc">
-              HTML5 & CSS3 certification in progress. Next modules: JavaScript, React, APIs & Back-End.<br><br>
-              Understanding of web construction, browser behaviour and frontend structure — directly applicable to digital operations, content management and sales support tasks.
-            </div>
-            <div class="card-tags" style="margin-top: 0.8rem;">
-              <span class="tag tag-purple">HTML5</span>
-              <span class="tag tag-teal">CSS3</span>
-              <span class="tag tag-grey">JavaScript (next)</span>
-            </div>
+            <div class="tl-org">Responsive Web Design</div>
+            <div class="tl-desc">HTML, CSS and mobile-first layouts. I built this portfolio myself.</div>
+            <div class="card-tags" style="margin-top: 0.8rem;"><span class="tag tag-purple">HTML</span><span class="tag tag-teal">CSS</span><span class="tag tag-grey">JavaScript</span></div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">2024</div>
+            <div class="tl-title">Graphic Product Design & SEO/SEM</div>
+            <div class="tl-org">Aspasia · Official professional certificate</div>
+            <div class="tl-desc">Graphic design for digital and print, plus SEO and SEM fundamentals.</div>
+            <div class="card-tags" style="margin-top: 0.8rem;"><span class="tag tag-purple">Design</span><span class="tag tag-teal">SEO/SEM</span></div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">2022</div>
+            <div class="tl-title">Web Page Creation & Publishing</div>
+            <div class="tl-org">Aspasia · Official professional certificate</div>
+            <div class="tl-desc">Building and publishing websites. 4-month internship at the Pukkas agency.</div>
+            <div class="card-tags" style="margin-top: 0.8rem;"><span class="tag tag-purple">Web</span><span class="tag tag-teal">WordPress</span></div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">2019 — 2020</div>
+            <div class="tl-title">Commercial Sales Management</div>
+            <div class="tl-org">Grup Cief · Official professional certificate</div>
+            <div class="tl-desc">Sales techniques, customer care and commercial management.</div>
+            <div class="card-tags" style="margin-top: 0.8rem;"><span class="tag tag-purple">Sales</span><span class="tag tag-teal">Customer</span></div>
           </div>
         </div>
       </div>
-
       <div class="fade-in">
         <div class="skill-block" style="margin-bottom: 1rem;">
-          <div class="skill-block-title">Technical Skills</div>
-          <div class="skill-item"><span class="skill-name">Content Review & QA</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:90%"></div></div></div>
-          <div class="skill-item"><span class="skill-name">Ticket / Email Support</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:88%"></div></div></div>
-          <div class="skill-item"><span class="skill-name">Shopify / Magento</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:82%"></div></div></div>
-          <div class="skill-item"><span class="skill-name">HTML / CSS</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:55%"></div></div></div>
-          <div class="skill-item"><span class="skill-name">AI Tools (Claude, ChatGPT)</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:80%"></div></div></div>
+          <div class="skill-block-title">Marketing & tools</div>
+          <div class="skill-item"><span class="skill-name">Email marketing & segmentation</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:80%"></div></div></div><div class="skill-item"><span class="skill-name">Shopify / Magento</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:82%"></div></div></div><div class="skill-item"><span class="skill-name">WordPress & landing pages</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:70%"></div></div></div><div class="skill-item"><span class="skill-name">Social media & content</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:78%"></div></div></div><div class="skill-item"><span class="skill-name">Make / n8n</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:55%"></div></div></div><div class="skill-item"><span class="skill-name">HTML / CSS</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:55%"></div></div></div>
         </div>
         <div class="skill-block">
-          <div class="skill-block-title">Soft Skills</div>
-          <div class="skill-item"><span class="skill-name">Attention to Detail</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:95%"></div></div></div>
-          <div class="skill-item"><span class="skill-name">Analytical Investigation</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:85%"></div></div></div>
-          <div class="skill-item"><span class="skill-name">Multitasking</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:90%"></div></div></div>
-          <div class="skill-item"><span class="skill-name">High Pressure Resilience</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:95%"></div></div></div>
+          <div class="skill-block-title">Soft skills</div>
+          <div class="skill-item"><span class="skill-name">Organisation & autonomy</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:90%"></div></div></div><div class="skill-item"><span class="skill-name">Team coordination</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:92%"></div></div></div><div class="skill-item"><span class="skill-name">Customer care</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:95%"></div></div></div><div class="skill-item"><span class="skill-name">Clear communication</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:88%"></div></div></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <div class="container">
     <div class="contact-box fade-in">
-      <div class="section-label" style="text-align:center; margin-bottom: 1rem;">// Contacto</div>
+      <div class="section-label" style="text-align:center; margin-bottom: 1rem;">// Contact</div>
       <h2 class="section-title" style="font-size: 2rem;">Xavi Moreno<br><span style="color: var(--accent);">Barcelona.</span></h2>
       <p style="color: var(--muted); margin-top: 1rem; font-size: 0.95rem;">Available immediately · Barcelona</p>
       <div class="contact-links">
@@ -709,9 +683,7 @@
   </div>
 </section>
 
-<footer>
-  Xavi Moreno · Digital Professional · Barcelona · 2026
-</footer>
+<footer>Xavi Moreno · Digital Marketing & Automation · Barcelona · 2026</footer>
 
 <script>
   const observer = new IntersectionObserver((entries) => {

@@ -523,6 +523,14 @@
     .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
     .cards-grid { grid-template-columns: 1fr; }
   }
+
+  .lang { font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.1em; color: var(--muted); text-decoration: none; border: 1px solid var(--border); padding: 0.3rem 0.6rem; border-radius: 3px; margin-left: 1.5rem; }
+  .lang:hover { color: var(--accent2); border-color: var(--accent2); }
+  .nav-right { display: flex; align-items: center; }
+  .train-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+  .card-date { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--accent2); letter-spacing: 0.1em; margin-bottom: 0.4rem; }
+  .card-org { font-size: 0.82rem; color: var(--muted); margin-bottom: 0.8rem; }
+  @media (max-width: 760px) { .train-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -531,169 +539,135 @@
 <div class="orb orb-2"></div>
 <div class="orb orb-3"></div>
 
-<!-- NAV -->
 <nav>
   <div class="nav-logo">XM<span>.</span></div>
-  <div class="nav-links">
-    <a href="#projects">Proyectos</a>
-    <a href="#training">Formación</a>
-    
-    <a href="#contact">Contacto</a>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="#experience">Experiencia</a>
+      <a href="#training">Formación</a>
+      <a href="#contact">Contacto</a>
+    </div>
+    <a class="lang" href="index.html">EN</a>
   </div>
 </nav>
 
-<!-- HERO -->
 <section id="hero">
   <div class="container">
-    <div class="hero-tag">Moderación de Contenido · Soporte al Cliente · Ad Tech</div>
+    <div class="hero-tag">Marketing Digital · CRM y Email Marketing · Automatización e IA</div>
     <h1 class="hero-name">
       <span class="line-1">XAVI</span><br>
       <span class="line-2">MORENO</span>
     </h1>
-    <p class="hero-role">
-      Ops Digital
-      <span class="sep">/</span>
-      E-commerce
-      <span class="sep">/</span>
-      Herramientas IA
-      <span class="sep">/</span>
-      Barcelona
-    </p>
-    <p class="hero-desc">
-      Profesional digital con +3 años en operaciones e-commerce, marketing digital y soporte multicanal. Formación activa en IA (Anthropic Academy) y desarrollo web (freeCodeCamp). Perfil orientado a resultados, con aprendizaje rápido y disponibilidad inmediata.
-    </p>
+    <p class="hero-role">Marketing Digital<span class="sep">/</span>E-commerce<span class="sep">/</span>Automatización<span class="sep">/</span>Barcelona</p>
+    <p class="hero-desc">Perfil de marketing digital y e-commerce: tiendas en Shopify y Magento, email marketing segmentado, redes sociales y webs en WordPress. Ahora me especializo en CRM y automatización, formándome de forma práctica en Make, n8n y agentes de IA con Claude.</p>
     <div class="hero-cta">
-      <a href="#projects" class="btn-primary">Ver Proyectos ↓</a>
+      <a href="#experience" class="btn-primary">Ver experiencia ↓</a>
       <a href="mailto:xabi.xmc@hotmail.com" class="btn-outline">Contactar</a>
     </div>
-    <div class="hero-stats">
-      <div>
-        <div class="stat-n">3<span>+</span></div>
-        <div class="stat-l">Años en ops digital</div>
-      </div>
-      <div>
-        <div class="stat-n">4<span>+</span></div>
-        <div class="stat-l">Plataformas gestionadas</div>
-      </div>
-      <div>
-        <div class="stat-n">2<span>x</span></div>
-        <div class="stat-l">Certificaciones IA (en curso)</div>
-      </div>
-    </div>
+    <div class="hero-stats"><div><div class="stat-n">10<span>+</span></div><div class="stat-l">Años gestionando equipos</div></div><div><div class="stat-n">3<span></span></div><div class="stat-l">Empresas de marketing y e-commerce</div></div><div><div class="stat-n">4<span></span></div><div class="stat-l">Cuentas de RRSS gestionadas</div></div></div>
   </div>
 </section>
 
-<!-- PROJECTS -->
-<section id="projects">
+<section id="experience">
   <div class="container">
-    <div class="section-label fade-in">// 01 — Proyectos E-commerce</div>
-    <h2 class="section-title fade-in">Platforms & Operations</h2>
-    <p class="section-sub fade-in">Experiencia directa gestionando tiendas digitales, calidad de contenido y operaciones de cliente en múltiples plataformas.</p>
-
+    <div class="section-label fade-in">// 01 — Experiencia en marketing digital</div>
+    <h2 class="section-title fade-in">Marketing & E-commerce</h2>
+    <p class="section-sub fade-in">Lo que he hecho en agencia, marca y tienda online.</p>
     <div class="cards-grid">
       <div class="card fade-in">
-        <div class="card-icon">🛍️</div>
-        <div class="card-title">5TH Essence Square — Magento</div>
-        <div class="card-desc">Gestión del catálogo de productos garantizando exactitud, consistencia y calidad en todos los registros. Resolución de incidencias con seguimiento detallado. Identificación de patrones irregulares en pedidos y mejoras de proceso.</div>
-        <div class="card-tags">
-          <span class="tag tag-purple">Magento</span>
-          <span class="tag tag-teal">Content Review</span>
-          <span class="tag tag-grey">Incident Management</span>
-          <span class="tag tag-grey">QA</span>
-        </div>
+        <div class="card-icon">🎯</div>
+        <div class="card-date">2022 · 4 MESES</div>
+        <div class="card-title">Pukkas</div>
+        <div class="card-org">Agencia de marketing digital · Prácticas</div>
+        <div class="card-desc">Gestión de redes sociales de clientes y preparación de contenido. Landing pages y webs de clientes en WordPress. Edición y diseño de piezas para publicaciones.</div>
+        <div class="card-tags"><span class="tag tag-purple">WordPress</span><span class="tag tag-teal">Landing pages</span><span class="tag tag-grey">RRSS</span><span class="tag tag-grey">Contenido</span></div>
       </div>
-
+      <div class="card fade-in">
+        <div class="card-icon">🛍️</div>
+        <div class="card-date">ABR 2020 — JUL 2021</div>
+        <div class="card-title">5TH Essence Square / IKIO</div>
+        <div class="card-org">Marketing digital y e-commerce · Badalona</div>
+        <div class="card-desc">Newsletters y campañas multicanal con marcas e influencers, midiendo KPIs. Gestión de 4 cuentas de Meta/Instagram. E-commerce en Magento y cuentas de distribuidores con seguimiento continuo.</div>
+        <div class="card-tags"><span class="tag tag-purple">Magento</span><span class="tag tag-teal">Email marketing</span><span class="tag tag-grey">Meta / Instagram</span><span class="tag tag-grey">KPIs</span></div>
+      </div>
       <div class="card fade-in">
         <div class="card-icon">⚡</div>
-        <div class="card-title">NŪDA Market — Shopify</div>
-        <div class="card-desc">Gestión completa de tienda Shopify: publicación de contenido, control de calidad y soporte multicanal via email y chat. Integración de herramientas de automatización para optimizar flujos repetitivos.</div>
-        <div class="card-tags">
-          <span class="tag tag-purple">Shopify</span>
-          <span class="tag tag-teal">Email Support</span>
-          <span class="tag tag-grey">Workflow Automation</span>
-          <span class="tag tag-grey">Brand Standards</span>
-        </div>
-      </div>
-
-      <div class="card fade-in">
-        <div class="card-icon">📊</div>
-        <div class="card-title">Operaciones de Campaña Multicanal</div>
-        <div class="card-desc">Coordinación de campañas digitales en 4 cuentas de RRSS de forma simultánea. Monitorización de contenido en busca de irregularidades, cumplimiento de marca y estándares de calidad en todas las publicaciones.</div>
-        <div class="card-tags">
-          <span class="tag tag-purple">RRSS Management</span>
-          <span class="tag tag-teal">Content Moderation</span>
-          <span class="tag tag-grey">KPI Tracking</span>
-          <span class="tag tag-grey">SEO/SEM</span>
-        </div>
+        <div class="card-date">FEB 2021 — MAY 2021</div>
+        <div class="card-title">NŪDA Market</div>
+        <div class="card-org">Marketing y e-commerce · Barcelona</div>
+        <div class="card-desc">Gestión completa de la tienda Shopify: catálogo, pedidos, soporte al cliente y mejora del funnel. Campañas de email marketing segmentadas para captación y, sobre todo, retención.</div>
+        <div class="card-tags"><span class="tag tag-purple">Shopify</span><span class="tag tag-teal">Segmentación</span><span class="tag tag-grey">Retención</span><span class="tag tag-grey">Soporte</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- TRAINING -->
 <section id="training">
   <div class="container">
-    <div class="section-label fade-in">// 02 — AI & Web Training</div>
+    <div class="section-label fade-in">// 02 — Formación</div>
     <h2 class="section-title fade-in">Aprendizaje Activo</h2>
-    <p class="section-sub fade-in">Certificaciones activas en herramientas de IA y desarrollo web — directamente aplicables a moderación de contenido y entornos ad tech.</p>
-
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
+    <p class="section-sub fade-in">Lo que estoy aprendiendo ahora y los certificados que ya tengo.</p>
+    <div class="train-grid">
       <div class="fade-in">
         <div class="timeline">
           <div class="tl-item">
-            <div class="tl-date">FEB 2026 — EN CURSO</div>
+            <div class="tl-date">2026 — EN CURSO</div>
             <div class="tl-title">Anthropic Academy</div>
-            <div class="tl-org">AI Fluency & Prompt Engineering</div>
-            <div class="tl-desc">
-              Programas: Claude 101 · Prompt Engineering Interactive Tutorial · AI Automation with Claude · Claude Code.<br><br>
-              Habilidades aplicadas: flujos de análisis de contenido, identificación de patrones, documentación estructurada con herramientas de IA.
-            </div>
-            <div class="card-tags" style="margin-top: 0.8rem;">
-              <span class="tag tag-purple">Claude API</span>
-              <span class="tag tag-teal">Prompt Engineering</span>
-              <span class="tag tag-grey">AI Automation</span>
-            </div>
+            <div class="tl-org">Claude 101 y automatización con IA</div>
+            <div class="tl-desc">Uso práctico de Claude, prompts y automatización de tareas con IA.</div>
+            <div class="card-tags" style="margin-top: 0.8rem;"><span class="tag tag-purple">Claude</span><span class="tag tag-teal">Prompting</span><span class="tag tag-grey">IA aplicada</span></div>
           </div>
-
           <div class="tl-item">
-            <div class="tl-date">ENE 2026 — EN CURSO</div>
+            <div class="tl-date">2026 — EN CURSO</div>
+            <div class="tl-title">Automatización e IA en práctica</div>
+            <div class="tl-org">Plan de estudio propio</div>
+            <div class="tl-desc">Ejercicios con Make, n8n y Flowise. Diseño de flujos de práctica para tareas administrativas: captación de leads, presupuestos y facturación. Python básico.</div>
+            <div class="card-tags" style="margin-top: 0.8rem;"><span class="tag tag-purple">Make</span><span class="tag tag-teal">n8n</span><span class="tag tag-grey">Flowise</span><span class="tag tag-grey">Python</span></div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">2026 — EN CURSO</div>
             <div class="tl-title">freeCodeCamp</div>
-            <div class="tl-org">Responsive Web Design · JavaScript</div>
-            <div class="tl-desc">
-              HTML5 & CSS3 certification in progress. Next modules: JavaScript, React, APIs & Back-End.<br><br>
-              Comprensión de la construcción web, comportamiento del navegador y estructura frontend — directamente aplicable a operaciones digitales, gestión de contenido y soporte de ventas.
-            </div>
-            <div class="card-tags" style="margin-top: 0.8rem;">
-              <span class="tag tag-purple">HTML5</span>
-              <span class="tag tag-teal">CSS3</span>
-              <span class="tag tag-grey">JavaScript (next)</span>
-            </div>
+            <div class="tl-org">Responsive Web Design</div>
+            <div class="tl-desc">HTML, CSS y diseño adaptable a móvil. Este portfolio está hecho por mí.</div>
+            <div class="card-tags" style="margin-top: 0.8rem;"><span class="tag tag-purple">HTML</span><span class="tag tag-teal">CSS</span><span class="tag tag-grey">JavaScript</span></div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">2024</div>
+            <div class="tl-title">CP Diseño de Productos Gráficos y SEO/SEM</div>
+            <div class="tl-org">Aspasia · Certificado de profesionalidad</div>
+            <div class="tl-desc">Diseño gráfico para soportes digitales e impresos, y fundamentos de SEO y SEM.</div>
+            <div class="card-tags" style="margin-top: 0.8rem;"><span class="tag tag-purple">Diseño</span><span class="tag tag-teal">SEO/SEM</span></div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">2022</div>
+            <div class="tl-title">CP Confección y Publicación de Páginas Web</div>
+            <div class="tl-org">Aspasia · Certificado de profesionalidad</div>
+            <div class="tl-desc">Creación y publicación de webs. Prácticas de 4 meses en la agencia Pukkas.</div>
+            <div class="card-tags" style="margin-top: 0.8rem;"><span class="tag tag-purple">Web</span><span class="tag tag-teal">WordPress</span></div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">2019 — 2020</div>
+            <div class="tl-title">CP Gestión Comercial de Ventas</div>
+            <div class="tl-org">Grup Cief · Certificado de profesionalidad</div>
+            <div class="tl-desc">Técnicas de venta, atención al cliente y gestión comercial.</div>
+            <div class="card-tags" style="margin-top: 0.8rem;"><span class="tag tag-purple">Ventas</span><span class="tag tag-teal">Cliente</span></div>
           </div>
         </div>
       </div>
-
       <div class="fade-in">
         <div class="skill-block" style="margin-bottom: 1rem;">
-          <div class="skill-block-title">Habilidades Técnicas</div>
-          <div class="skill-item"><span class="skill-name">Content Review & QA</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:90%"></div></div></div>
-          <div class="skill-item"><span class="skill-name">Soporte Ticket / Email</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:88%"></div></div></div>
-          <div class="skill-item"><span class="skill-name">Shopify / Magento</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:82%"></div></div></div>
-          <div class="skill-item"><span class="skill-name">HTML / CSS</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:55%"></div></div></div>
-          <div class="skill-item"><span class="skill-name">Herramientas IA (Claude, ChatGPT)</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:80%"></div></div></div>
+          <div class="skill-block-title">Marketing y herramientas</div>
+          <div class="skill-item"><span class="skill-name">Email marketing y segmentación</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:80%"></div></div></div><div class="skill-item"><span class="skill-name">Shopify / Magento</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:82%"></div></div></div><div class="skill-item"><span class="skill-name">WordPress y landing pages</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:70%"></div></div></div><div class="skill-item"><span class="skill-name">RRSS y contenido</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:78%"></div></div></div><div class="skill-item"><span class="skill-name">Make / n8n</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:55%"></div></div></div><div class="skill-item"><span class="skill-name">HTML / CSS</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:55%"></div></div></div>
         </div>
         <div class="skill-block">
-          <div class="skill-block-title">Habilidades Blandas</div>
-          <div class="skill-item"><span class="skill-name">Atención al Detalle</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:95%"></div></div></div>
-          <div class="skill-item"><span class="skill-name">Investigación Analítica</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:85%"></div></div></div>
-          <div class="skill-item"><span class="skill-name">Multitarea</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:90%"></div></div></div>
-          <div class="skill-item"><span class="skill-name">Resiliencia bajo Presión</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:95%"></div></div></div>
+          <div class="skill-block-title">Personales</div>
+          <div class="skill-item"><span class="skill-name">Organización y autonomía</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:90%"></div></div></div><div class="skill-item"><span class="skill-name">Coordinación de equipos</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:92%"></div></div></div><div class="skill-item"><span class="skill-name">Atención al cliente</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:95%"></div></div></div><div class="skill-item"><span class="skill-name">Comunicación clara</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:88%"></div></div></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <div class="container">
     <div class="contact-box fade-in">
@@ -709,9 +683,7 @@
   </div>
 </section>
 
-<footer>
-  Xavi Moreno · Profesional Digital · Barcelona · 2026
-</footer>
+<footer>Xavi Moreno · Marketing Digital y Automatización · Barcelona · 2026</footer>
 
 <script>
   const observer = new IntersectionObserver((entries) => {
